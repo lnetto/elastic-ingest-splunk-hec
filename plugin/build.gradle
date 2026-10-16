@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+group = 'co.elastic.splunkhec'
+version = "${pluginVersion}"
+
+java {
+    toolchain { languageVersion = JavaLanguageVersion.of(21) }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Provided by the Elasticsearch runtime; never bundled.
+    compileOnly "org.elasticsearch:elasticsearch:${esVersion}"
+    // Security extension SPI (roles provider) and the authenticate action; provided by x-pack-security at runtime.
+    compileOnly("org.elasticsearch.plugin:x-pack-core:${esVersion}") { transitive = false }
+
+    testImplementation "org.elasticsearch:elasticsearch:${esVersion}"
+    testImplementation("org.elasticsearch.plugin:x-pack-core:${esVersion}") { transitive = false }
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.11.4'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.release = 21
+    options.compilerArgs << '-Xlint:all,-processing,-serial,-try' << '-Werror'
+}
+
+test {
+    useJUnitPlatform()
+    outputs.upToDateWhen { false }
+    testLogging { events 'failed'; exceptionFormat 'full'; showStandardStreams = true }
+}
+
+def descriptor = tasks.register('pluginDescriptor', Copy) {
+    from 'src/main/plugin-metadata'
+    into layout.buildDirectory.dir('plugin-metadata')
+    inputs.property('pluginVersion', project.version)
+    inputs.property('esVersion', esVersion)
+    expand(pluginVersion: project.version, esVersion: esVersion)
+}
+
+tasks.register('bundlePlugin', Zip) {
+    dependsOn jar, descriptor
+    archiveFileName = "ingest-splunk-hec-${project.version}-es${esVersion}.zip"
+    destinationDirectory = layout.buildDirectory.dir('distributions')
+    from jar
+    from descriptor
+}

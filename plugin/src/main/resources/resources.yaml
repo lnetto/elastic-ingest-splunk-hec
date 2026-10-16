@@ -1,0 +1,10 @@
+# The templates and ingest pipeline HecTemplateRegistry installs. Raise "version" whenever one of them changes: the elected master then
+# puts them again (it never overwrites a newer version).
+version: 4
+component-templates:
+  - logs-splunk.hec@mappings
+  - logs-splunk.hec@settings
+index-templates:
+  - logs-splunk.hec@template
+ingest-pipelines:
+  - logs-splunk.hec@default-pipeline: {}
