@@ -1,0 +1,19 @@
+version: ${splunk_hec.template.version}
+index_patterns: ["logs-splunk.hec-*"]
+priority: 141
+data_stream: {}
+allow_auto_create: true
+_meta:
+  description: Data streams of the ingest-splunk-hec plugin's default target. Put your own settings and mappings in the logs-splunk.hec@custom component template, your processors in the logs-splunk.hec@custom ingest pipeline.
+  managed: true
+composed_of:
+  - logs@mappings
+  - logs@settings
+  - logs-splunk.hec@mappings
+  - logs-splunk.hec@settings
+  - logs@custom
+  - logs-splunk.hec@custom
+  - ecs@mappings
+ignore_missing_component_templates:
+  - logs@custom
+  - logs-splunk.hec@custom

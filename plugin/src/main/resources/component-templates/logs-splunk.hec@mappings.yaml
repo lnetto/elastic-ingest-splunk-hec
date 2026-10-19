@@ -1,0 +1,36 @@
+version: ${splunk_hec.template.version}
+_meta:
+  description: Fields the ingest-splunk-hec plugin writes on every event
+  managed: true
+template:
+  mappings:
+    properties:
+      network:
+        properties:
+          forwarded_ip: { type: ip, ignore_malformed: true }
+      splunk:
+        properties:
+          time: { type: date }
+          host: { type: keyword, ignore_above: 1024 }
+          source: { type: keyword, ignore_above: 1024 }
+          sourcetype: { type: keyword, ignore_above: 1024 }
+          index: { type: keyword, ignore_above: 1024 }
+          channel: { type: keyword, ignore_above: 1024 }
+          token_name: { type: keyword }
+          token_sha256: { type: keyword }
+          fields: { type: flattened, ignore_above: 1024 }
+          hec:
+            properties:
+              endpoint: { type: keyword }
+          request:
+            properties:
+              id: { type: keyword }
+              received: { type: date }
+              node: { type: keyword }
+              remote_address: { type: ip, ignore_malformed: true }
+              x_forwarded_for: { type: keyword, ignore_above: 1024 }
+      metric:
+        properties:
+          name: { type: keyword }
+          value: { type: double }
+          type: { type: keyword }
