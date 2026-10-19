@@ -1,0 +1,1131 @@
+{
+ "cases": {
+  "ack_event_no_channel": {
+   "body": {
+    "code": 10,
+    "text": "Data channel is missing"
+   },
+   "status": 400
+  },
+  "ack_event_other_channel": {
+   "body": {
+    "ackId": 0,
+    "code": 0,
+    "text": "Success"
+   },
+   "status": 200
+  },
+  "ack_event_second": {
+   "body": {
+    "ackId": 1,
+    "code": 0,
+    "text": "Success"
+   },
+   "status": 200
+  },
+  "ack_event_with_channel": {
+   "body": {
+    "ackId": 0,
+    "code": 0,
+    "text": "Success"
+   },
+   "status": 200
+  },
+  "ack_query_bad_body": {
+   "body": {
+    "code": 6,
+    "text": "Invalid data format"
+   },
+   "status": 400
+  },
+  "ack_query_known_and_unknown": {
+   "body": {
+    "acks": {
+     "0": true,
+     "1": true,
+     "2": true,
+     "99": false
+    }
+   },
+   "status": 200
+  },
+  "ack_query_no_channel": {
+   "body": {
+    "code": 10,
+    "text": "Data channel is missing"
+   },
+   "status": 400
+  },
+  "ack_query_noack_token": {
+   "body": {
+    "code": 14,
+    "text": "ACK is disabled"
+   },
+   "status": 400
+  },
+  "ack_raw_with_channel": {
+   "body": {
+    "ackId": 2,
+    "code": 0,
+    "text": "Success"
+   },
+   "status": 200
+  },
+  "auth_bad_token": {
+   "body": {
+    "code": 4,
+    "text": "Invalid token"
+   },
+   "status": 403
+  },
+  "auth_basic_token_as_password": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "status": 200
+  },
+  "auth_basic_token_as_user": {
+   "body": {
+    "code": 3,
+    "text": "Invalid authorization"
+   },
+   "status": 401
+  },
+  "auth_bearer": {
+   "body": {
+    "code": 3,
+    "text": "Invalid authorization"
+   },
+   "status": 401
+  },
+  "auth_missing": {
+   "body": {
+    "code": 2,
+    "text": "Token is required"
+   },
+   "status": 401
+  },
+  "auth_query_token": {
+   "body": {
+    "code": 16,
+    "text": "Query string authorization is not enabled"
+   },
+   "status": 400
+  },
+  "auth_splunk_lowercase": {
+   "body": {
+    "code": 3,
+    "text": "Invalid authorization"
+   },
+   "status": 401
+  },
+  "auth_splunk_no_token": {
+   "body": {
+    "code": 3,
+    "text": "Invalid authorization"
+   },
+   "status": 401
+  },
+  "batch_concat": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "c1": 1,
+    "c2": 1,
+    "c3": 1
+   },
+   "markers": [
+    "c1",
+    "c2",
+    "c3"
+   ],
+   "status": 200,
+   "stored": {
+    "c1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    },
+    "c2": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    },
+    "c3": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "batch_json_array": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "j1": 1,
+    "j2": 1
+   },
+   "markers": [
+    "j1",
+    "j2"
+   ],
+   "status": 200,
+   "stored": {
+    "j1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    },
+    "j2": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "batch_newlines": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "n1": 1,
+    "n2": 1,
+    "n3": 1
+   },
+   "markers": [
+    "n1",
+    "n2",
+    "n3"
+   ],
+   "status": 200,
+   "stored": {
+    "n1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    },
+    "n2": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    },
+    "n3": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "batch_second_missing_event": {
+   "body": {
+    "code": 12,
+    "invalid-event-number": 1,
+    "text": "Event field is required"
+   },
+   "indexed": {
+    "p1": 1,
+    "p2": 0,
+    "p3": 0
+   },
+   "markers": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "status": 400,
+   "stored": {
+    "p1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "batch_third_bad_json": {
+   "body": {
+    "code": 6,
+    "invalid-event-number": 2,
+    "text": "Invalid data format"
+   },
+   "indexed": {
+    "q1": 1,
+    "q2": 1
+   },
+   "markers": [
+    "q1",
+    "q2"
+   ],
+   "status": 400,
+   "stored": {
+    "q1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    },
+    "q2": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "empty_body": {
+   "body": {
+    "code": 5,
+    "text": "No data"
+   },
+   "indexed": {},
+   "markers": [],
+   "status": 400,
+   "stored": {}
+  },
+  "event_array": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "arr": 1
+   },
+   "markers": [
+    "arr"
+   ],
+   "status": 200,
+   "stored": {
+    "arr": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "event_bool": {
+   "body": {
+    "code": 6,
+    "invalid-event-number": 0,
+    "text": "Invalid data format"
+   },
+   "indexed": {
+    "bool": 0
+   },
+   "markers": [
+    "bool"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "event_empty_object": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "eo": 1
+   },
+   "markers": [
+    "eo"
+   ],
+   "status": 200,
+   "stored": {
+    "eo": {
+     "host": "127.0.0.1:18088",
+     "source": "hcf860c44d97xeo",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "event_empty_string": {
+   "body": {
+    "code": 13,
+    "invalid-event-number": 0,
+    "text": "Event field cannot be blank"
+   },
+   "indexed": {
+    "es": 0
+   },
+   "markers": [
+    "es"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "event_missing": {
+   "body": {
+    "code": 12,
+    "invalid-event-number": 0,
+    "text": "Event field is required"
+   },
+   "indexed": {
+    "em": 0
+   },
+   "markers": [
+    "em"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "event_null": {
+   "body": {
+    "code": 6,
+    "invalid-event-number": 0,
+    "text": "Invalid data format"
+   },
+   "indexed": {
+    "en": 0
+   },
+   "markers": [
+    "en"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "event_number": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "num": 1
+   },
+   "markers": [
+    "num"
+   ],
+   "status": 200,
+   "stored": {
+    "num": {
+     "host": "127.0.0.1:18088",
+     "source": "hcf860c44d97xnum",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "event_object": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "b": 1
+   },
+   "markers": [
+    "b"
+   ],
+   "status": 200,
+   "stored": {
+    "b": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "event_query_params": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "qp": 1
+   },
+   "markers": [
+    "qp"
+   ],
+   "status": 200,
+   "stored": {
+    "qp": {
+     "host": "qphost",
+     "source": "http:noack",
+     "sourcetype": "qp:st",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "event_string": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "a": 1
+   },
+   "markers": [
+    "a"
+   ],
+   "status": 200,
+   "stored": {
+    "a": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "event_whitespace": {
+   "body": {
+    "code": 13,
+    "invalid-event-number": 0,
+    "text": "Event field cannot be blank"
+   },
+   "indexed": {
+    "ew": 0
+   },
+   "markers": [
+    "ew"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "fields_array": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "f2": 1
+   },
+   "markers": [
+    "f2"
+   ],
+   "status": 200,
+   "stored": {
+    "f2": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "fields_array_of_objects": {
+   "body": {
+    "code": 15,
+    "invalid-event-number": 0,
+    "text": "Error in handling indexed fields"
+   },
+   "indexed": {
+    "f4": 0
+   },
+   "markers": [
+    "f4"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "fields_flat": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "f1": 1
+   },
+   "markers": [
+    "f1"
+   ],
+   "status": 200,
+   "stored": {
+    "f1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "fields_nested_object": {
+   "body": {
+    "code": 15,
+    "invalid-event-number": 0,
+    "text": "Error in handling indexed fields"
+   },
+   "indexed": {
+    "f3": 0
+   },
+   "markers": [
+    "f3"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "fields_not_object": {
+   "body": {
+    "code": 6,
+    "invalid-event-number": 0,
+    "text": "Invalid data format"
+   },
+   "indexed": {
+    "f5": 0
+   },
+   "markers": [
+    "f5"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "fields_null_value": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "f6": 1
+   },
+   "markers": [
+    "f6"
+   ],
+   "status": 200,
+   "stored": {
+    "f6": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "get_event": {
+   "body": {
+    "code": 404,
+    "text": "The requested URL was not found on this server."
+   },
+   "indexed": {},
+   "markers": [],
+   "status": 405,
+   "stored": {}
+  },
+  "gzip_body": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "gz": 1
+   },
+   "markers": [
+    "gz"
+   ],
+   "status": 200,
+   "stored": {
+    "gz": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "health": {
+   "body": {
+    "code": 17,
+    "text": "HEC is healthy"
+   },
+   "indexed": {},
+   "markers": [],
+   "status": 200,
+   "stored": {}
+  },
+  "index_allowed": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "i1": 1
+   },
+   "markers": [
+    "i1"
+   ],
+   "status": 200,
+   "stored": {
+    "i1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "index_not_allowed": {
+   "body": {
+    "code": 7,
+    "invalid-event-number": 1,
+    "text": "Incorrect index"
+   },
+   "indexed": {
+    "i2": 0
+   },
+   "markers": [
+    "i2"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "invalid_json": {
+   "body": {
+    "code": 6,
+    "invalid-event-number": 0,
+    "text": "Invalid data format"
+   },
+   "indexed": {},
+   "markers": [],
+   "status": 400,
+   "stored": {}
+  },
+  "meta_numbers": {
+   "body": {
+    "code": 6,
+    "invalid-event-number": 0,
+    "text": "Invalid data format"
+   },
+   "indexed": {
+    "mn": 0
+   },
+   "markers": [
+    "mn"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "no_content_type": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "nct": 1
+   },
+   "markers": [
+    "nct"
+   ],
+   "status": 200,
+   "stored": {
+    "nct": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "path_bare": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "pb": 1
+   },
+   "markers": [
+    "pb"
+   ],
+   "status": 200,
+   "stored": {
+    "pb": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "path_event_1_0": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "p10": 1
+   },
+   "markers": [
+    "p10"
+   ],
+   "status": 200,
+   "stored": {
+    "p10": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "raw_bad_channel": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "rbc": 1
+   },
+   "markers": [
+    "rbc"
+   ],
+   "status": 200,
+   "stored": {
+    "rbc": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "raw_channel_query_param": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "rcq": 1
+   },
+   "markers": [
+    "rcq"
+   ],
+   "status": 200,
+   "stored": {
+    "rcq": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "raw_crlf_lines": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "rc": 1
+   },
+   "markers": [
+    "rc"
+   ],
+   "status": 200,
+   "stored": {
+    "rc": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "raw_empty": {
+   "body": {
+    "code": 5,
+    "text": "No data"
+   },
+   "indexed": {},
+   "markers": [],
+   "status": 400,
+   "stored": {}
+  },
+  "raw_multiline": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "rm": 2
+   },
+   "markers": [
+    "rm"
+   ],
+   "status": 200,
+   "stored": {
+    "rm": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1760014400.0
+    }
+   }
+  },
+  "raw_no_channel": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "r0": 1
+   },
+   "markers": [
+    "r0"
+   ],
+   "status": 200,
+   "stored": {
+    "r0": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "raw_query_meta": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "rq": 1
+   },
+   "markers": [
+    "rq"
+   ],
+   "status": 200,
+   "stored": {
+    "rq": {
+     "host": "rqhost",
+     "source": "rqsrc",
+     "sourcetype": "rq:st",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "raw_with_channel": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "r1": 1
+   },
+   "markers": [
+    "r1"
+   ],
+   "status": 200,
+   "stored": {
+    "r1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "text_plain_content_type": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "ct": 1
+   },
+   "markers": [
+    "ct"
+   ],
+   "status": 200,
+   "stored": {
+    "ct": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "time_float": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "t2": 1
+   },
+   "markers": [
+    "t2"
+   ],
+   "status": 200,
+   "stored": {
+    "t2": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1760000000.123
+    }
+   }
+  },
+  "time_garbage": {
+   "body": {
+    "code": 15,
+    "invalid-event-number": 0,
+    "text": "Error in handling indexed fields"
+   },
+   "indexed": {
+    "t6": 0
+   },
+   "markers": [
+    "t6"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "time_int": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "t1": 1
+   },
+   "markers": [
+    "t1"
+   ],
+   "status": 200,
+   "stored": {
+    "t1": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1760000000.0
+    }
+   }
+  },
+  "time_iso": {
+   "body": {
+    "code": 15,
+    "invalid-event-number": 0,
+    "text": "Error in handling indexed fields"
+   },
+   "indexed": {
+    "t7": 0
+   },
+   "markers": [
+    "t7"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "time_millis": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "t4": 1
+   },
+   "markers": [
+    "t4"
+   ],
+   "status": 200,
+   "stored": {
+    "t4": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1760000000.123
+    }
+   }
+  },
+  "time_negative": {
+   "body": {
+    "code": 15,
+    "invalid-event-number": 0,
+    "text": "Error in handling indexed fields"
+   },
+   "indexed": {
+    "t5": 0
+   },
+   "markers": [
+    "t5"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "time_string": {
+   "body": {
+    "code": 0,
+    "text": "Success"
+   },
+   "indexed": {
+    "t3": 1
+   },
+   "markers": [
+    "t3"
+   ],
+   "status": 200,
+   "stored": {
+    "t3": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1760000000.5
+    }
+   }
+  },
+  "trailing_garbage": {
+   "body": {
+    "code": 6,
+    "invalid-event-number": 1,
+    "text": "Invalid data format"
+   },
+   "indexed": {
+    "tg": 1
+   },
+   "markers": [
+    "tg"
+   ],
+   "status": 400,
+   "stored": {
+    "tg": {
+     "host": "127.0.0.1:18088",
+     "source": "http:noack",
+     "sourcetype": "httpevent",
+     "time": 1792385188.0
+    }
+   }
+  },
+  "unknown_top_level_key": {
+   "body": {
+    "code": 5,
+    "text": "No data"
+   },
+   "indexed": {
+    "uk": 0
+   },
+   "markers": [
+    "uk"
+   ],
+   "status": 400,
+   "stored": {}
+  },
+  "whitespace_body": {
+   "body": {
+    "code": 5,
+    "text": "No data"
+   },
+   "indexed": {},
+   "markers": [],
+   "status": 400,
+   "stored": {}
+  }
+ },
+ "run": "f860c44d97",
+ "target": "splunk",
+ "url": "http://127.0.0.1:18088"
+}

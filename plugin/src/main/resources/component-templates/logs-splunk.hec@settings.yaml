@@ -1,0 +1,8 @@
+version: ${splunk_hec.template.version}
+_meta:
+  description: Default pipeline of the ingest-splunk-hec plugin's data streams. logs-splunk.hec@custom comes later in the index template and can override it.
+  managed: true
+template:
+  settings:
+    index:
+      default_pipeline: logs-splunk.hec@default-pipeline
